@@ -23,14 +23,4 @@ public class SpringsecurityApplication {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
-    @Autowired
-    private WebPermissionEvaluator webPermissionEvaluator;
-
-    @Bean
-    public DefaultWebSecurityExpressionHandler webSecurityExpressionHandler(){
-        DefaultWebSecurityExpressionHandler defaultWebSecurityExpressionHandler = new DefaultWebSecurityExpressionHandler();
-        defaultWebSecurityExpressionHandler.setPermissionEvaluator(webPermissionEvaluator);
-        return  defaultWebSecurityExpressionHandler;
-    }
-
 }
